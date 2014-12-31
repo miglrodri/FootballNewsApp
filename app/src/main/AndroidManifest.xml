@@ -12,6 +12,7 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -19,6 +20,12 @@
             android:name=".NewsActivity"
             android:label="@string/title_activity_news" >
         </activity>
+
+        <service
+            android:name=".CheckNotificationsService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

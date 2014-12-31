@@ -21,6 +21,8 @@ public class MainActivity extends Activity {
     }
 
     public void jumpToNews(View view) {
+        startService(new Intent(this, CheckNotificationsService.class));
+        super.onResume();
         startActivity(new Intent(this, NewsActivity.class));
     }
 
@@ -51,6 +53,9 @@ public class MainActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        MenuItem item = menu.add("Search");
+        item.setIcon(android.R.drawable.ic_menu_search);
+        item.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
