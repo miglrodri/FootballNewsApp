@@ -3,12 +3,15 @@ package football.nuvemazul.com.footballnewsapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 
 public class MainActivity extends Activity {
+
+    private String CLASS_NAME = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +22,30 @@ public class MainActivity extends Activity {
 
     public void jumpToNews(View view) {
         startActivity(new Intent(this, NewsActivity.class));
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(CLASS_NAME, "onPause");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(CLASS_NAME, "onResume");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(CLASS_NAME, "onRestart");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(CLASS_NAME, "onStop");
     }
 
     @Override
